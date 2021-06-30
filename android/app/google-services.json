@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "336290731441",
+    "project_id": "babbit-2719b",
+    "storage_bucket": "babbit-2719b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336290731441:android:6fae484f76fb512d5dd990",
+        "android_client_info": {
+          "package_name": "com.code.flutterassignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336290731441-4hh2nreflv8crnlhkr1ldkvu8qkdfnfk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBctTk2VTZ04Y6s-NdQigi3GDpae7DqRbw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336290731441-4hh2nreflv8crnlhkr1ldkvu8qkdfnfk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

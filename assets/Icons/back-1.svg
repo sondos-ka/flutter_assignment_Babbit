@@ -1,0 +1,7 @@
+<svg id="back" xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41">
+  <rect id="bg" width="41" height="41" rx="20.5" fill="#2b2b2b"/>
+  <g id="icons_back-light" data-name="icons/back-light" transform="translate(11.106 10.854)">
+    <rect id="bg-2" data-name="bg" width="19" height="19" transform="translate(-0.106 0.146)" fill="none"/>
+    <path id="icon" d="M4.951,10.543.286,5.879a.6.6,0,0,1-.212-.8.6.6,0,0,1,.171-.2L4.951.175a.595.595,0,0,1,.842.841l-3.76,3.76H12.1a.595.595,0,1,1,0,1.19H2.056L5.792,9.7a.6.6,0,0,1-.842.841Z" transform="translate(3.173 4.15)" fill="#fff"/>
+  </g>
+</svg>
