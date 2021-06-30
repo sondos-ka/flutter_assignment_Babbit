@@ -69,9 +69,9 @@ class _HomeScreenState extends State<HomeScreen> {
               Text(sCategories,style:categoryLableStyle),
               Container(
                 color: cRedLine,height:2,width: 85,)]))
-         , Container(
-                padding: EdgeInsets.all(10),
-          height: 2000,
+         , Expanded(
+//                padding: EdgeInsets.all(10),
+//          height: 2000,
 
                    child:
                 IgnorePointer(
