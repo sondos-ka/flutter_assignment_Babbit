@@ -5,7 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterassignment/screen/HomeScreen.dart';
 import 'base/Product.dart';
-import 'base/product_list.dart';
+
 
 void main() async {
  WidgetsFlutterBinding.ensureInitialized();

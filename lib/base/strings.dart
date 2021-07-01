@@ -27,4 +27,9 @@ String sImgCat10="blaous";
 String sImgCat11="sweet-shirts";
 String sImgCat12="other";
 
+String sAll="االكل";
 
+
+String sHome="الرئيسية";
+String sUser="المستخدم";
+String sChat="المحادثة";

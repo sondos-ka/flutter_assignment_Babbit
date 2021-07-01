@@ -86,4 +86,45 @@ width: width,
 
 }
 
+Widget productShow(width,image,price){
 
+  return Container(
+    width: width,
+
+
+    padding: EdgeInsets.only(top: 10),
+    child: Card(
+
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20.0), side: new BorderSide(color: Colors.black, width: 1.0),
+        ),
+        color: Colors.white,
+        child:Container(
+          child: Column(
+
+            children: [
+              Container(
+                alignment: Alignment.topRight,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20.0),
+                  child: Image.network(image,fit: BoxFit.cover,),
+                ),
+              ),
+
+              SizedBox(height: 5,),
+
+              Container(
+                  alignment: Alignment.center,
+                  child: Text(price.toString(),style: categoryTextStyle,textAlign: TextAlign.center,))
+            ],
+          ),
+        )
+
+
+
+
+    ),
+  );
+
+
+}
