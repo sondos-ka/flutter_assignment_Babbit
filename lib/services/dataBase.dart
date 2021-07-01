@@ -20,7 +20,9 @@ class dataBase{
       return Product(
           id: doc.data()['id']??0,
           mediaUrl: doc.data()['media_url']?? '',
-          productId: doc.data()['product_id']?? 0
+          productId: doc.data()['product_id']?? 0,
+          category: doc.data()['category']?? 0,
+          price: doc.data()['price']?? 0
       );
     }
     ).toList();

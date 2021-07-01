@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutterassignment/base/strings.dart';
 
@@ -75,11 +76,7 @@ width: width,
                     child: Text(name,style: categoryTextStyle,textAlign: TextAlign.center,))
               ],
             )
-
-
-
-
-        ),
+         ),
   );
 
 
@@ -93,38 +90,83 @@ Widget productShow(width,image,price){
 
 
     padding: EdgeInsets.only(top: 10),
-    child: Card(
+    child: Column(
+      children: [
+        Card(
 
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.0), side: new BorderSide(color: Colors.black, width: 1.0),
-        ),
-        color: Colors.white,
-        child:Container(
-          child: Column(
-
-            children: [
-              Container(
-                alignment: Alignment.topRight,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20.0),
-                  child: Image.network(image,fit: BoxFit.cover,),
-                ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0), side: new BorderSide(color: Colors.black, width: 1.0),
+            ),
+            color: Colors.white,
+            child:Container(
+              alignment: Alignment.topRight,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20.0),
+                child: Image.network(image,fit: BoxFit.cover,),
               ),
+            )
+        ),
 
-              SizedBox(height: 5,),
+        SizedBox(height: 5,),
 
-              Container(
-                  alignment: Alignment.center,
-                  child: Text(price.toString(),style: categoryTextStyle,textAlign: TextAlign.center,))
-            ],
-          ),
+        Row(
+          children: [
+
+            Text(sUnit,style: priceStyle,),Text(" "+price.toString(),style: priceStyle,),
+          ],
         )
-
-
-
-
+      ],
     ),
   );
 
+
+}
+
+
+Widget watchMoreButton(Function onPressed,width) {
+  return Container(
+    height: 70.0,
+    width: width/1.5,
+
+    child: RaisedButton(
+      color:  cButton,
+      shape: RoundedRectangleBorder(
+        borderRadius: new BorderRadius.circular(18.0),
+      ),
+      onPressed: () { onPressed();},
+      child: Container(
+  decoration: BoxDecoration(
+  borderRadius: BorderRadius.circular(18),),
+
+        alignment: Alignment.center,
+        child: Text(sWatchMore,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              color: Colors.white, fontSize:25,),
+        ),
+      ),
+    ),
+  );
+}
+
+Widget imageText(image,text,width,style){
+  return
+  Stack(
+        children: [
+
+          Container(
+            width:  width,
+            padding: EdgeInsets.all(10),
+            child: Image.asset(image,fit: BoxFit.cover,),
+          ),
+
+          Container(
+            padding: EdgeInsets.fromLTRB(width/3,width/6, 0, 0),
+
+              alignment: Alignment.center,
+              child: Text(text,style: style,textAlign: TextAlign.center,))
+        ],
+
+  );
 
 }

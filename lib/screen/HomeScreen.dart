@@ -19,9 +19,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List cats= List<Cat>();
-  int curPage=0;
-
-
+  int curPage=3;
+  int selectedListItem1=0;
+  int selectedListItem2=0;
+  int selectedListItem3=0;
   @override
   void initState() {
    cats..add(Cat(id: 1, name: sCat1, image: sImgCat1
@@ -70,6 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
           bottomNavigationBar: BottomNavigationBar(
+            selectedItemColor:cRedLine,
             currentIndex : curPage,
               onTap: (int index) {
           setState(() {
@@ -78,17 +80,19 @@ class _HomeScreenState extends State<HomeScreen> {
               // this will be set when a new tab is tapped
             items: [
               BottomNavigationBarItem(
-                  icon:  curPage==0 ?  SvgPicture.asset('assets/Icons/User off.svg'): SvgPicture.asset('assets/Icons/User off-1.svg'),
+                  icon:  curPage== 0?  SvgPicture.asset('assets/Icons/User off-1.svg'): SvgPicture.asset('assets/Icons/User off.svg'),
                   label:sUser
               ), BottomNavigationBarItem(
-                  icon: curPage==1 ?SvgPicture.asset('assets/Icons/categories off.svg'):SvgPicture.asset('assets/Icons/categories off-1.svg'),
+                  icon: curPage== 1?SvgPicture.asset('assets/Icons/categories off-1.svg'):SvgPicture.asset('assets/Icons/categories off.svg'),
                   label:sCategories
               ),BottomNavigationBarItem(
-                icon: curPage==2 ? SvgPicture.asset('assets/Icons/chat off.svg'):SvgPicture.asset('assets/Icons/chat off.svg-1'),
+                icon: curPage==2 ? SvgPicture.asset('assets/Icons/chat off-1.svg'):SvgPicture.asset('assets/Icons/chat off.svg'),
                 label: sChat,
               ),BottomNavigationBarItem(
-                icon: curPage==3 ? SvgPicture.asset('assets/Icons/Home on.svg'):SvgPicture.asset('assets/Icons/Home on.svg-1'),
+                icon: curPage==3 ? SvgPicture.asset('assets/Icons/Home on-1.svg'):SvgPicture.asset('assets/Icons/Home on.svg'),
                 label: sHome,
+
+
               ),
             ],
           ),
@@ -135,15 +139,87 @@ class _HomeScreenState extends State<HomeScreen> {
                     scrollDirection: Axis.horizontal,
                     itemCount: cats.length,
                     itemBuilder: (BuildContext context, int index){
-                       return Container(
-                         padding: EdgeInsets.only(left: 40),
-                           child: Text(catListView[index], style:categoryListStyle,));
+                       return GestureDetector(
+                         onTap: (){setState(() {
+                           selectedListItem1=index;
+                         });},
+                         child: Container(
+                           padding: EdgeInsets.only(left: 40),
+                             child: Text(catListView[index], style:selectedListItem1==index?categoryListStyleSelected :categoryListStyle,)),
+                       );
                     }
                   ),
                 ),
                 Container(
-                    height: 1000,
+                   height:MediaQuery.of(context).orientation==Orientation.portrait? 500: 850,
                     child: ProductList()),
+                Container(
+                    padding: EdgeInsets.all(20),
+
+                    child: watchMoreButton((){},width)),
+
+                Container(
+
+                    child: imageText("assets/Banners/special-sizes.png",sBigSizes,width,imageTextStyle)),
+                Container(
+                  padding: EdgeInsets.fromLTRB(0,20,15,0),
+                  height: 50,
+                  child: ListView.builder(
+                      reverse: true,
+                      // shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: cats.length,
+                      itemBuilder: (BuildContext context, int index){
+                        return GestureDetector(
+                          onTap: (){setState(() {
+                            selectedListItem2=index;
+                          });},
+                          child: Container(
+                              padding: EdgeInsets.only(left: 40),
+                              child: Text(catListView[index], style: selectedListItem2==index?categoryListStyleSelected :categoryListStyle,)),
+                        );
+                      }
+                  ),
+                ),
+                Container(
+                    height:MediaQuery.of(context).orientation==Orientation.portrait? 500: 850,
+                    child: ProductList()),
+                Container(
+                    padding: EdgeInsets.all(20),
+
+                    child: watchMoreButton((){},width)),
+                Container(
+
+                    child: imageText("assets/Banners/sale-banner.png",sDiscount,width,imageTextStyleWhite)),
+                Container(
+                  padding: EdgeInsets.fromLTRB(0,20,15,0),
+                  height: 50,
+                  child: ListView.builder(
+                      reverse: true,
+                      // shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: cats.length,
+                      itemBuilder: (BuildContext context, int index){
+                        return GestureDetector(
+                          onTap: (){setState(() {
+                            selectedListItem3=index;
+                          });},
+                          child: Container(
+                              padding: EdgeInsets.only(left: 40),
+                              child: Text(catListView[index], style: selectedListItem3==index?categoryListStyleSelected :categoryListStyle,)),
+                        );
+                      }
+                  ),
+                ),
+                Container(
+                    height:MediaQuery.of(context).orientation==Orientation.portrait? 500: 850,
+                    child: ProductList()),
+                Container(
+                    padding: EdgeInsets.all(20),
+
+                    child: watchMoreButton((){},width)),
+
+
 
 
 

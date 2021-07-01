@@ -28,8 +28,10 @@ String sImgCat11="sweet-shirts";
 String sImgCat12="other";
 
 String sAll="االكل";
-
-
 String sHome="الرئيسية";
 String sUser="المستخدم";
 String sChat="المحادثة";
+String sUnit="د.ع";
+String sWatchMore="مشاهدة المزيد";
+String sBigSizes="مقاسات كبيرة";
+String sDiscount="قسم الحسومات";
